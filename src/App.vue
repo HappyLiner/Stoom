@@ -22,22 +22,12 @@
         class="hidden md:hidden flex flex-col divide-y-2 divide-gray-800 text-center text-2xl mt-5"
         id="menu"
       >
-        <a href="">
-          <p>Library</p>
-        </a>
-        <a href="profile.html">
-          <p>Profile</p>
-        </a>
-        <a href="tech_support.html">
-          <p>Help</p>
-        </a>
+        <router-link to="/Library">Library</router-link>
+        <router-link to="/Prof">Profile</router-link>
+        <router-link to="/TechSup">Help</router-link>
         <div class="divide-x-2 divide-gray-800">
-          <a href="login.html">
-            <span class="px-10"> Log in </span>
-          </a>
-          <a href="registration.html">
-            <span class="px-10"> Sing up </span>
-          </a>
+          <router-link to="/Login" class="px-10">Login</router-link>
+          <router-link to="/SignUp" class="px-10">SignUp</router-link>
         </div>
       </div>
       <!--Navigation menu-->

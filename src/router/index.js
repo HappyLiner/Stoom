@@ -21,6 +21,21 @@ const routes = [
     component: () => import('../views/Prof.vue')
   },
   {
+    path: '/prof/settings',
+    name: 'profSettings',
+    component: () => import('../views/profSettings.vue')
+  },
+  {
+    path: '/prof/addGame',
+    name: 'addGame',
+    component: () => import('../views/addGame.vue')
+  },
+  {
+    path: '/addProm',
+    name: 'addProm',
+    component: () => import('../views/addProm.vue')
+  },
+  {
     path: '/techSup',
     name: 'techSup',
     component: () => import('../views/TechSup.vue')
@@ -34,6 +49,11 @@ const routes = [
     path: '/signUp',
     name: 'SignUp',
     component: () => import('../views/SignUp.vue')
+  },
+  {
+    path: '/Home/$GAMENAME',
+    name: 'gamePage',
+    component: () => import('../views/gamePage.vue')
   }
 ]
 

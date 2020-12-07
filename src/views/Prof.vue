@@ -24,20 +24,20 @@
             <div
               class="col-span-12 w-full px-3 py-6 justify-center flex space-x-4 md:space-x-0 md:space-y-4 md:flex-col md:col-span-2 md:justify-start"
             >
-              <a
-                href="profile.html"
+              <router-link
+                to="/Prof"
                 class="text-sm p-2 text-center bg-yellow-500"
               >
-                Information</a
+                Information</router-link
               >
-              <a href="profilesettings.html" class="text-sm p-2 text-center"
-                >Settings</a
+              <router-link to="/profSettings" class="text-sm p-2 text-center"
+                >Settings</router-link
               >
-              <a href="addGame.html" class="text-sm p-2 text-center"
-                >Add new game</a
+              <router-link to="/addGame" class="text-sm p-2 text-center"
+                >Add new game</router-link
               >
-              <a href="addPromo.html" class="text-sm p-2 text-center"
-                >Promotion</a
+              <router-link to="/addPromo" class="text-sm p-2 text-center"
+                >Promotion</router-link
               >
             </div>
             <div
