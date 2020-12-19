@@ -70,7 +70,7 @@
                     </div>
                   </div>
                   <div>
-                    <h3 class="text-2xl">More About Me</h3>
+                    <h3 class="text-2xl">More  About Me</h3>
                     <hr />
                   </div>
                   <div class="w-full">
