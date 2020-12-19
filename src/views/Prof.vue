@@ -118,8 +118,8 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem natus nobis odi
       </main>
     </div>
     <tbody>
-        <tr v-for="user_ in User" :key="user_.gameResID">
-          <td class="text-left"> {{ user_.gameResID}}</td>
+        <tr v-for="user_ in User" :key="user_.gameResTitle">
+          <td class="text-left"> {{ user_.gameResTitle}}</td>
           
         </tr>
       </tbody>
