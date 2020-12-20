@@ -3,3 +3,11 @@
 @tailwind components;
 
 @tailwind utilities;
+
+.buttonBuy {
+    @apply bg-red-500 text-white font-bold py-1 px-2 rounded-full w-16 justify-self-end;
+}
+
+.textBox {
+    @apply border-solid border-gray-600 border-2 p-3 w-full;
+}

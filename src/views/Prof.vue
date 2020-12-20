@@ -16,7 +16,7 @@
                 src="https://cdn.frankerfacez.com/emoticon/405548/4"
                 class="h-24 w-24 object-cover"
               />
-              <h1 class="text-2xl">Turtle pepega</h1>
+              <h2 class="text-2xl">Turtle pepega</h2>
               <h4 class="text-sm">WEB DEV GOOD</h4>
             </div>
           </div>

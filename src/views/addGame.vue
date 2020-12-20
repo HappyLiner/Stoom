@@ -35,7 +35,7 @@
           >
           <router-link to="/addPromo" class="text-sm p-2 text-center"
             >Promotion</router-link
-          >
+          > 
         </div>
         <div
           class="col-span-12 md:border-solid md:border-l md:border-black md:border-opacity-25 h-full pb-12 md:col-span-10"

@@ -131,7 +131,7 @@
               </div>
             </div>
             <div class="shadow-xl">
-              <img src="https://www.mobygames.com/images/covers/l/380359-for-honor-playstation-4-front-cover.png"
+              <img src="https://images-ext-2.discordapp.net/external/Kej3jYrPHyuy9fxSR9i8MHhOhzHWblQkFPLv0BVyAWU/%3Ft%3D1592914193/https/cdn.cloudflare.steamstatic.com/steam/apps/435150/header.jpg"
                 alt="ForHonor" class="object-cover h-56 w-full">
               <div class="grid grid-cols-2 px-2 py-2">
                 <span class="text-lg">For Honor</span>
