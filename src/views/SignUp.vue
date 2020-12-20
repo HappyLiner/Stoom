@@ -120,8 +120,8 @@ export default {
       console.log(newUser);
       axios
         .post("http://localhost:8081/stoom/user/registerUser", newUser)
-        .then(responce => {
-          console.log(responce);
+        .then(response => {
+          console.log(response);
         });
       
     }
