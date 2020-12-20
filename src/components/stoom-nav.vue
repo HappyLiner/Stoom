@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <!--Navigation-->
-    <div class="sticky top-0 py-4 px-20 bg-yellow-500">
+    <div class="py-4 px-20 bg-yellow-500">
       <!--Small screen drop-button-->
       <div class="flex items-center md:hidden">
         <button @click="isVisible = !isVisible">
@@ -26,7 +26,7 @@
       >
         <router-link to="/">Store</router-link>
         <router-link to="/Library">Library</router-link>
-        <router-link to="/Prof">Profile</router-link>
+        <router-link to="/Profile">Profile</router-link>
         <router-link to="/TechSup">Help</router-link>
         <div class="divide-x-2 divide-gray-800">
           <router-link to="/Login" class="px-10">Login</router-link>
@@ -57,7 +57,7 @@
             <router-link to="/Library" class="px-2 hover:bg-blue-500"
               >Library</router-link
             >
-            <router-link to="/Prof" class="px-2 hover:bg-blue-500"
+            <router-link to="/Profile" class="px-2 hover:bg-blue-500"
               >Profile</router-link
             >
             <router-link to="/TechSup" class="px-2 hover:bg-blue-500"

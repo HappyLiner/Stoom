@@ -16,9 +16,9 @@ const routes = [
     component: () => import('../views/Library.vue')
   },
   {
-    path: '/prof',
-    name: 'Prof',
-    component: () => import('../views/Prof.vue')
+    path: '/profile',
+    name: 'Profile',
+    component: () => import('../views/Profile.vue')
   },
   {
     path: '/techSup',
