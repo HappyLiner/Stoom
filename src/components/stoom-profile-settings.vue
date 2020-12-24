@@ -17,26 +17,6 @@
               class="w-full py-1 px-2 bg-blue-100"
             />
           </div>
-          <div
-            class="flex flex-col space-y-4 md:space-y-0 md:flex-row md:space-x-4"
-          >
-            <div class="w-full">
-              <label class="text-xl">Username</label>
-              <input
-                type="text"
-                value="DuckDivision"
-                class="w-full py-1 px-2 bg-blue-100"
-              />
-            </div>
-            <div class="w-full">
-              <label class="text-xl">Email</label>
-              <input
-                type="text"
-                value="baranov-matvej@mail.ru"
-                class="w-full py-1 px-2 bg-blue-100"
-              />
-            </div>
-          </div>
           <div>
             <h3 class="text-2xl">About</h3>
             <hr />

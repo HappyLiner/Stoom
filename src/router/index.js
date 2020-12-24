@@ -36,7 +36,7 @@ const routes = [
     component: () => import('../views/SignUp.vue')
   },
   {
-    path: '/Home/$GAMENAME',
+    path: '/gamePage',
     name: 'gamePage',
     component: () => import('../views/gamePage.vue')
   }

@@ -10,35 +10,14 @@
             <hr />
           </div>
           <div>
-            <label class="text-xl">Full Name</label>
+            <label class="text-xl">Username</label>
             <input
               type="text"
-              value="Matvej Baranov"
+              value="Banana"
               class="w-full py-1 px-2 bg-blue-100"
               disabled
+              ref='user'
             />
-          </div>
-          <div
-            class="flex flex-col space-y-4 md:space-y-0 md:flex-row md:space-x-4"
-          >
-            <div class="w-full">
-              <label class="text-xl">Username</label>
-              <input
-                type="text"
-                value="DuckDivision"
-                class="w-full py-1 px-2 bg-blue-100"
-                disabled
-              />
-            </div>
-            <div class="w-full">
-              <label class="text-xl">Email</label>
-              <input
-                type="text"
-                value="baranov-matvej@mail.ru"
-                class="w-full py-1 px-2 bg-blue-100"
-                disabled
-              />
-            </div>
           </div>
           <div>
             <h3 class="text-2xl">More About Me</h3>
@@ -93,9 +72,31 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem natus nobis odi
 </template>
 
 <script>
+import axios from "axios";
 export default {
   name: "stoom-profile-information",
   props: {},
   methods: {},
+  data() {
+    return {
+      User: []
+    };
+  },
+  mounted() {
+    axios
+      .get("http://localhost:8081/stoom/user/", {
+        params: {
+          userName: sessionStorage.getItem("user")
+        },
+        headers: {
+          authorization: sessionStorage.getItem("authorization")
+        }
+      })
+      .then(response => {
+        console.log(response.data);
+        this.User = response.data;
+        this.$refs.user.value = sessionStorage.getItem('user');
+      });
+  }
 };
 </script>
