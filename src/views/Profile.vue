@@ -34,7 +34,9 @@
               <button
                 class="text-sm p-2 text-center bg-yellow-500"
                 type="button"
-                @click="isSettingsVisible = !isSettingsVisible"
+                @click="isSettingsVisible = !isSettingsVisible 
+                && sessionStorage.getItem('role') == 'ROLE_ADMIN'"
+                
               >
                 Settings
               </button>
@@ -49,6 +51,7 @@
                 class="text-sm p-2 text-center bg-yellow-500"
                 type="button"
                 @click="isPromotionVisible = !isPromotionVisible"
+                
               >
                 Promotion
               </button>
