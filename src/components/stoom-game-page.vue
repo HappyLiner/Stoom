@@ -84,23 +84,11 @@
           <p class="leading-relaxed">good game</p>
           <div class="flex py-8">
             <span class="title-font font-medium text-2xl" ref="price">$69.99</span>
-            <button class="flex ml-auto buttonBuy items-center justify-center hover:bg-red-700">Buy</button>
             <button
-              class="rounded-full w-10 h-10 bg-gray-200 p-0 border-0 inline-flex items-center justify-center hover:bg-yellow-500 ml-4"
-            >
-              <svg
-                fill="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                class="w-5 h-5"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"
-                />
-              </svg>
-            </button>
+              class="flex ml-auto buttonBuy items-center justify-center hover:bg-red-700"
+              @click="buyGame"
+            >Buy</button>
+            
           </div>
         </div>
       </div>
@@ -121,52 +109,16 @@
     </div>
 
     <div class="flex justify-center">
-      <button class="w-3/4 bg-yellow-400 px-2 py-1" type="submit" @click="add_z">Submitt review</button>
+      <button
+        class="w-3/4 bg-yellow-400 px-2 py-1"
+        type="submit"
+        @click="addToReviewUser"
+      >Submitt review</button>
     </div>
 
-    <header class="text-center font-mono text-3xl py-8">
-      <h2>Reviews</h2>
-    </header>
+    
 
-    <div class="w-3/4 mx-auto pb-8">
-      <label class="text-xl">1) MY NAME IS POG:</label>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus
-        quia, nulla! Maiores et perferendis eaque, exercitationem praesentium
-        nihil.
-      </p>
-      <p>10/10</p>
-    </div>
-    <div class="w-3/4 mx-auto pb-8">
-      <label class="text-xl">2) Banana:</label>
-      <p>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi
-        molestias quia error praesentium tempora provident eaque. Dicta vero,
-        voluptates atque pariatur quo accusamus, eum tenetur doloremque fugiat
-        necessitatibus, qui excepturi.
-      </p>
-      <p>7/10</p>
-    </div>
-    <div class="w-3/4 mx-auto pb-8">
-      <label class="text-xl">3) HACKERMANS:</label>
-      <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum
-        molestiae ipsa placeat fugiat earum blanditiis aliquid magnam? Ipsam
-        tenetur sit distinctio iste dolore. Libero ducimus, cum obcaecati
-        consequatur veniam iste!
-      </p>
-      <p>2/10</p>
-    </div>
-    <div class="w-3/4 mx-auto pb-8">
-      <label class="text-xl">4) Lorik:</label>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. In similique
-        laborum impedit sapiente error, aliquam animi cumque, blanditiis libero
-        delectus laboriosam quisquam. Impedit dicta libero, ex quibusdam rem
-        ipsa voluptates.
-      </p>
-      <p>7/10</p>
-    </div>
+    
   </div>
 </template>
 
@@ -175,6 +127,7 @@ import axios from "axios";
 var gameName = sessionStorage.getItem("game_name");
 //var userName = sessionStorage.getItem('user');
 var userID;
+
 export default {
   name: "stoom-game-page",
   props: {},
@@ -184,8 +137,7 @@ export default {
     };
   },
   methods: {
-    add_game_to_user() {},
-    add_z() {
+    addToReviewUser: function() {
       let Game = {
         gameRate: this.Game.gameRate,
         gameReview: this.Game.gameReview
@@ -200,6 +152,22 @@ export default {
       console.log(Game);
       axios
         .post("http://localhost:8081/stoom/review/", Review, {
+          headers: {
+            authorization: sessionStorage.getItem("authorization")
+          }
+        })
+        .then(response => {
+          console.log(response);
+        });
+    },
+    buyGame: function() {
+      //console.log("hello");
+      let bGame = {
+        reviewGameID: sessionStorage.getItem("game_id"),
+        reviewUserID: userID
+      };
+      axios
+        .post("http://localhost:8081/stoom/game_user/", bGame, {
           headers: {
             authorization: sessionStorage.getItem("authorization")
           }

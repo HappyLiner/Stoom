@@ -27,15 +27,17 @@
               <button
                 class="text-sm p-2 text-center bg-yellow-500"
                 type="button"
-                @click="isInformationVisible = !isInformationVisible"
+                
+                @click="isInformationVisible = !isInformationVisible "
               >
                 Information
               </button>
               <button
                 class="text-sm p-2 text-center bg-yellow-500"
                 type="button"
+                
                 @click="isSettingsVisible = !isSettingsVisible 
-                && sessionStorage.getItem('role') == 'ROLE_ADMIN'"
+                "
                 
               >
                 Settings
@@ -43,14 +45,19 @@
               <button
                 class="text-sm p-2 text-center bg-yellow-500"
                 type="button"
-                @click="isGameVisible = !isGameVisible"
+                ref="hidd"
+                @click="hidBut
+
+                "
               >
                 Add new game
               </button>
               <button
                 class="text-sm p-2 text-center bg-yellow-500"
                 type="button"
-                @click="isPromotionVisible = !isPromotionVisible"
+                ref= "hidd1"
+                @click="hidBut
+                "
                 
               >
                 Promotion
@@ -102,8 +109,16 @@ export default {
       isPromotionVisible: false
     };
   },
-  methods: {},
+  methods: {
+    hidBut(){
+      if (sessionStorage.getItem("role") != "ROLE_ADMIN"){
+      this.$refs.hidd.display = "none";
+      this.$refs.hidd1.display = "none";
+    }
+    }
+  },
   mounted() {
+    
     axios
       .get("http://localhost:8081/stoom/user/", {
         params: {
